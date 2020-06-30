@@ -1,4 +1,4 @@
-import path from 'path';
+import path from "path";
 
 export namespace Knex {
   export const config = {
@@ -13,5 +13,9 @@ export namespace Knex {
       directory: path.resolve(__dirname, "database", "seeds"),
     },
     useNullAsDefault: true,
-  }
+    pool: {
+      min: 5,
+      max: 10,
+    },
+  };
 }
